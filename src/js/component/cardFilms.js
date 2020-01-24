@@ -2,13 +2,13 @@ import React, { useContext, useState } from "react";
 import "../../styles/home.scss";
 import { Context } from "../store/appContext";
 
-export const Card = () => {
+export const CardFilms = () => {
 	const { store, actions } = useContext(Context);
 	return (
 		<>
-			{store.people.map((item, index) => {
+			{store.films.map((item, index) => {
 				return (
-					<div key={index} className="col-3">
+					<div key={index} className="col-2">
 						<div className="card" style={{ width: "18rem" }}>
 							<img
 								className="card-img-top"
@@ -16,13 +16,12 @@ export const Card = () => {
 								alt="Card image cap"
 							/>
 							<div className="card-body">
-								<h5 className="card-title">{item.name}</h5>
-								<p className="card-text">
-									Some quick example text to build on the card title and make up the bulk of the cards
-									content
-								</p>
+								<h5 className="card-title">{item.title}</h5>
+								<p className="card-text">Episode: {item.episode_id}</p>
+								<p>Director: {item.director}</p>
+								<p>Relase Date: {item.release_date}</p>
 								<a href="#" className="btn btn-primary">
-									Go somewhere
+									Go
 								</a>
 							</div>
 						</div>

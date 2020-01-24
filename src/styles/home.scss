@@ -1,0 +1,21 @@
+body {
+    background-image: url("https://wallpapercave.com/wp/wp2902991.jpg");
+}
+
+h1 {
+    color: rgb(199, 199, 65);
+}
+
+.testimonial-group > .row {
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.testimonial-group > .row > .col-xs-4 {
+  display: inline-block;
+  float: none;
+}
+
+.btn {
+     background: rgb(199, 199, 65);
+}
