@@ -16,7 +16,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 					.then(data => {
 						setStore({ people: data.results });
 					});
-				console.log(store.demo);
 			}
 		}
 	};
