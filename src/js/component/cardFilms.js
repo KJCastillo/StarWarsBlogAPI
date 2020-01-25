@@ -8,7 +8,7 @@ export const CardFilms = () => {
 		<>
 			{store.films.map((item, index) => {
 				return (
-					<div key={index} className="col-2">
+					<div key={index} className="col-3">
 						<div className="card" style={{ width: "18rem" }}>
 							<img
 								className="card-img-top"
@@ -20,8 +20,8 @@ export const CardFilms = () => {
 								<p className="card-text">Episode: {item.episode_id}</p>
 								<p>Director: {item.director}</p>
 								<p>Relase Date: {item.release_date}</p>
-								<a href="#" className="btn btn-primary">
-									Go
+								<a href="#" className="btn savebtn btn-info">
+									save
 								</a>
 							</div>
 						</div>

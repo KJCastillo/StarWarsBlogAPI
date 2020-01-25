@@ -8,7 +8,7 @@ export const CardPeople = () => {
 		<>
 			{store.people.map((item, index) => {
 				return (
-					<div key={index} className="col-2">
+					<div key={index} className="col-3">
 						<div className="card" style={{ width: "18rem" }}>
 							<img
 								className="card-img-top"
@@ -20,8 +20,11 @@ export const CardPeople = () => {
 								<p className="card-text">Gender: {item.gender}</p>
 								<p>Height: {item.height}</p>
 								<p>Mass: {item.mass}</p>
-								<a href="#" className="btn btn-primary">
-									Go
+								<a
+									href="#"
+									className="btn savebtn btn-info"
+									onClick={() => actions.saveFavorites(item.name)}>
+									save
 								</a>
 							</div>
 						</div>

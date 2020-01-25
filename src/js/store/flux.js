@@ -3,7 +3,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 		store: {
 			demo: [],
 			people: [],
-			films: []
+			films: [],
+			favorites: []
 		},
 		actions: {
 			loadSomePeople: () => {
@@ -21,6 +22,11 @@ const getState = ({ getStore, getActions, setStore }) => {
 					.then(data => {
 						setStore({ films: data.results });
 					});
+			},
+			saveFavorites: name => {
+				const store = getStore();
+				setStore({ favorites: [...store.favorites, name] });
+				console.log(store.favorites);
 			}
 		}
 	};
