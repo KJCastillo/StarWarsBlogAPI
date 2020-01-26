@@ -24,7 +24,7 @@ export const Navbar = () => {
 					data-toggle="dropdown"
 					aria-haspopup="true"
 					aria-expanded="false">
-					Dropdown link
+					Favorites
 				</a>
 
 				<div className="dropdown-menu" aria-labelledby="dropdownMenuLink">

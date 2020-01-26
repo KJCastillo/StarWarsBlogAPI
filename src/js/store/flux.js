@@ -26,7 +26,10 @@ const getState = ({ getStore, getActions, setStore }) => {
 			saveFavorites: name => {
 				const store = getStore();
 				setStore({ favorites: [...store.favorites, name] });
-				console.log(store.favorites);
+			},
+			saveFilms: title => {
+				const store = getStore();
+				setStore({ favorites: [...store.favorites, title] });
 			}
 		}
 	};

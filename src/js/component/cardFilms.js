@@ -20,7 +20,10 @@ export const CardFilms = () => {
 								<p className="card-text">Episode: {item.episode_id}</p>
 								<p>Director: {item.director}</p>
 								<p>Relase Date: {item.release_date}</p>
-								<a href="#" className="btn savebtn btn-info">
+								<a
+									href="#"
+									className="btn savebtn btn-info"
+									onClick={() => actions.saveFilms(item.title)}>
 									save
 								</a>
 							</div>
