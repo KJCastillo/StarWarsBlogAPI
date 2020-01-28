@@ -8,7 +8,7 @@ export const CardFilms = () => {
 		<>
 			{store.films.map((item, index) => {
 				return (
-					<div key={index} className="col-3">
+					<div key={index} className="col h-100 p-3">
 						<div className="card" style={{ width: "18rem" }}>
 							<img
 								className="card-img-top"

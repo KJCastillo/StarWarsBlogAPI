@@ -4,6 +4,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			demo: [],
 			people: [],
 			films: [],
+			planets: [],
 			favorites: []
 		},
 		actions: {
@@ -23,6 +24,14 @@ const getState = ({ getStore, getActions, setStore }) => {
 						setStore({ films: data.results });
 					});
 			},
+			loadSomePlanets: () => {
+				const store = getStore();
+				fetch("https://swapi.co/api/planets/")
+					.then(response => response.json())
+					.then(data => {
+						setStore({ planets: data.results });
+					});
+			},
 			saveFavorites: name => {
 				const store = getStore();
 				setStore({ favorites: [...store.favorites, name] });
@@ -30,6 +39,17 @@ const getState = ({ getStore, getActions, setStore }) => {
 			saveFilms: title => {
 				const store = getStore();
 				setStore({ favorites: [...store.favorites, title] });
+			},
+			savePlanets: planet => {
+				const store = getStore();
+				setStore({ favorites: [...store.favorites, planet] });
+			},
+			deleteFav: i => {
+				const store = getStore();
+				const favorites = store.favorites.filter((el, index) => {
+					return i !== index;
+				});
+				setStore({ favorites: [...favorites] });
 			}
 		}
 	};

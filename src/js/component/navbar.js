@@ -15,7 +15,7 @@ export const Navbar = () => {
 					alt="star wars"
 				/>
 			</a>
-			<div className="dropdown show">
+			<div className="dropdown show dropleft">
 				<a
 					className="btn btn-dark dropdown-toggle"
 					href="#"
@@ -26,11 +26,21 @@ export const Navbar = () => {
 					aria-expanded="false">
 					Favorites
 				</a>
-
 				<div className="dropdown-menu" aria-labelledby="dropdownMenuLink">
-					{store.favorites.map(el => {
-						return el;
-					})}
+					<ul>
+						{store.favorites.map((el, index) => {
+							return (
+								<li key={index}>
+									{el}{" "}
+									<button
+										onClick={() => actions.deleteFav(index)}
+										className="float-right  btn btn-danger">
+										X
+									</button>
+								</li>
+							);
+						})}
+					</ul>
 				</div>
 			</div>
 		</nav>

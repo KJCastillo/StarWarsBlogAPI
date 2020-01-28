@@ -2,11 +2,11 @@ import React, { useContext, useState } from "react";
 import "../../styles/home.scss";
 import { Context } from "../store/appContext";
 
-export const CardPeople = () => {
+export const CardPlanets = () => {
 	const { store, actions } = useContext(Context);
 	return (
 		<>
-			{store.people.map((item, index) => {
+			{store.planets.map((item, index) => {
 				return (
 					<div key={index} className="col h-100 p-3">
 						<div className="card" style={{ width: "18rem" }}>
@@ -17,13 +17,14 @@ export const CardPeople = () => {
 							/>
 							<div className="card-body">
 								<h5 className="card-title">{item.name}</h5>
-								<p className="card-text">Gender: {item.gender}</p>
-								<p>Height: {item.height}</p>
-								<p>Mass: {item.mass}</p>
+								<p className="card-text">Terrain: {item.terrain}</p>
+								<p>Climate: {item.climate}</p>
+								<p>Surface Water: {item.surface_water}</p>
+								<p>Population: {item.population}</p>
 								<a
 									href="#"
 									className="btn savebtn btn-info"
-									onClick={() => actions.saveFavorites(item.name)}>
+									onClick={() => actions.savePlanets(item.name)}>
 									save
 								</a>
 							</div>
