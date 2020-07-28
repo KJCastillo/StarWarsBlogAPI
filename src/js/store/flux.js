@@ -10,7 +10,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 		actions: {
 			loadSomePeople: () => {
 				const store = getStore();
-				fetch("https://swapi.co/api/people/")
+				fetch("https://swapi.dev/api/people/")
 					.then(response => response.json())
 					.then(data => {
 						setStore({ people: data.results });
@@ -18,7 +18,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 			loadSomeFilms: () => {
 				const store = getStore();
-				fetch("https://swapi.co/api/films/")
+				fetch("https://swapi.dev/api/films/")
 					.then(response => response.json())
 					.then(data => {
 						setStore({ films: data.results });
@@ -26,7 +26,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 			loadSomePlanets: () => {
 				const store = getStore();
-				fetch("https://swapi.co/api/planets/")
+				fetch("https://swapi.dev/api/planets/")
 					.then(response => response.json())
 					.then(data => {
 						setStore({ planets: data.results });
